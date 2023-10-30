@@ -6,6 +6,34 @@
     <title>Test task ITProfit</title>
 </head>
 <body>
-    
+    <div class="black-bg black-bg-hidden" id="modal">
+        <div class="wrapper-modal">
+            <div class="modal">
+                <div class="modal-title">
+                    <div class="title-icon">!</div>
+                    <span class="title-text">Внимание!!!</span>
+                </div>
+                <div class="modal-text">
+                    Заполняя форму вы даете согласие на обработку Ваших данных!
+                    Внимательно введите данные, после ввода их изменить не возможно!
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button" id="close-info">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="section">
+            <span class="section-title">Заполните форму</span><button class="section-info" id="button-info">!</button>
+            <form class="section-form" action="">
+                <input class="form-item" type="text" id="name" placeholder="Введите имя">
+                <input class="form-item" type="email" id="email" placeholder="Введите email">
+                <input class="form-item" type="tel" id="tel" placeholder="Введите телефон">
+                <textarea class="form-item" id="text" placeholder="Введите текст"></textarea>
+                <button class="form-btn" id="send">Отправить</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,0 +1,183 @@
+$mainTextColor: #565656;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    &.body-fixed {
+        width: 100vw;
+        position: fixed;
+    }
+}
+
+.black-bg-hidden {
+    display: none;
+}
+
+.black-bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    
+    .wrapper-modal {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+
+        .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 400px;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 50px;
+            border-radius: 10px;
+
+            .modal-title {
+                .title-icon {
+                    display: inline-flex;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 40px;
+                    background-color: rgb(147, 147, 255);
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 40px;
+                }
+
+                .title-text {
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+
+            .modal-text {
+                text-align: center;
+                background-color: rgb(250, 250, 250);
+                padding: 60px 20px;
+                border: 1px solid lightgray;
+            }
+
+            .modal-buttons {
+                .modal-button {
+                    position: relative;
+                    left: 100%;
+                    transform: translateX(-100%);
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: rgb(79, 79, 238);
+                    color: white;
+
+                    &:hover {
+                        background-color: rgb(43, 43, 235);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.section {
+    height: 100vh;
+    padding: 100px 50px;
+    background: url('../public/images/form_bg.png') top right / cover no-repeat;
+
+    .section-title {
+        font-size: 28px;
+        text-transform: uppercase;
+        color: $mainTextColor;
+        display: inline-block;
+        margin-bottom: 50px ;
+        font-weight: 600;
+    }
+
+    .section-info {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        border: none;
+        font-size: 28px;
+        margin-left: 50px;
+        animation: info_btn 0.5s ease infinite;
+        
+        &:hover {
+            transform: scale(1.05);
+            background-color: rgb(147, 147, 255);
+            animation: none;
+            cursor: pointer;
+        }
+
+        @keyframes info_btn {
+            0% {
+                transform: scale(1);
+                background-color: rgb(229, 229, 255);
+            }
+            50% {
+                transform: scale(1.05);
+                background-color: rgb(204, 204, 255);
+            }
+            100% {
+                transform: scale(1);
+                background-color: rgb(229, 229, 255);
+            }
+        }
+    }
+
+    .section-form {
+        width: 50%;
+
+        .form-item {
+            width: 100%;
+            padding: 20px 15px 15px;
+            margin-bottom: 50px;
+            border: none;
+            border-bottom: 2px solid lightgray;
+            background-color: rgb(252, 252, 252);
+            font-size: 18px;
+            font-weight: 100;
+            color: $mainTextColor;
+            border-radius: 5px 5px 0 0;
+    
+            &::placeholder{
+                color: lightgray;
+            }
+    
+            &:focus {
+                outline: none;
+                border-bottom: 2px solid rgb(93, 184, 93);
+                box-shadow: inset 0 1px 5px lightgray;
+            }
+        }
+
+        .form-btn {
+            width: 50%;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 100;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(184, 235, 184);
+    
+            &:hover {
+                transform: scale(1.02);
+                background-color: rgb(154, 243, 154);
+                cursor: pointer;
+            }
+        }
+    }
+}
