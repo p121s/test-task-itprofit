@@ -1,13 +1,15 @@
+import IMask from 'imask';
+import { validateForm, getValidInput, validInput, getError } from './modules/validation-form';
 
 import '../styles/styles.scss';
 
-import IMask from 'imask';
-
 const body = document.getElementsByTagName('body')[0];
-const element = document.getElementById('tel');
+const tel = document.getElementById('tel');
 const buttonInfo = document.getElementById('button-info');
 const buttonCloseInfo = document.getElementById('close-info');
 const modal = document.getElementById('modal');
+const buttonSend = document.getElementById('send');
+const form = document.getElementById('form');
 
 const maskOptions = {
     mask: '+{375} (000) 000-00-00',
@@ -15,7 +17,7 @@ const maskOptions = {
     placeholderChar: '-'
 };
 
-const mask = IMask(element, maskOptions);
+const mask = IMask(tel, maskOptions);
 
 function addClass(elems, className) {
     elems.forEach(elem => elem.classList.add(className));
@@ -37,3 +39,4 @@ function closeModal() {
 
 buttonInfo.addEventListener('click', showModal);
 buttonCloseInfo.addEventListener('click', closeModal);
+form.addEventListener('submit', getError);
